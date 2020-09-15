@@ -1,0 +1,54 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gitlab-deployment
+  namespace: gitlab
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gitlab
+  template:
+    metadata:
+      labels:
+        app: gitlab
+    spec:
+      containers:
+       - name: gitlab-container
+         image: gitlab/gitlab-ce:latest
+         env:
+         - name: EXTERNAL_URL
+           value: "103.218.157.69"
+         - name: GITLAB_OMNIBUS_CONFIG
+           value: |
+            external_url "http://103.218.157.69"
+
+          #- name: GITLAB_REGISTRY_EXTERNAL_HOSTNAME
+          #  value: 103.218.157.69
+          #- name: GITLAB_EXTERNAL_HOSTNAME
+          #  value: 103.218.157.69
+          #- name: HOSTNAME
+          #  value: 103.218.157.69
+          #- name: EXTERNAL_URL
+          #  value: http://103.218.157.69/
+         volumeMounts:
+         - name: gitlab-volume
+           mountPath: /etc/gitlab
+           subPath: gitlab/config 
+         - name: gitlab-volume
+           mountPath: /var/log/gitlab
+           subPath: gitlab/logs
+         - name: gitlab-volume
+           mountPath: /var/opt/gitlab
+           subPath: gitlab/data
+         ports:
+         - name: http
+           containerPort: 80
+         - name: ssh
+           containerPort: 22
+         - name: https
+           containerPort: 443 
+      volumes:
+      - name: gitlab-volume
+        persistentVolumeClaim:
+          claimName: gitlab-pvc 
