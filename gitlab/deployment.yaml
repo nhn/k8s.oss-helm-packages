@@ -22,15 +22,6 @@ spec:
          - name: GITLAB_OMNIBUS_CONFIG
            value: |
             external_url "http://103.218.157.69"
-
-          #- name: GITLAB_REGISTRY_EXTERNAL_HOSTNAME
-          #  value: 103.218.157.69
-          #- name: GITLAB_EXTERNAL_HOSTNAME
-          #  value: 103.218.157.69
-          #- name: HOSTNAME
-          #  value: 103.218.157.69
-          #- name: EXTERNAL_URL
-          #  value: http://103.218.157.69/
          volumeMounts:
          - name: gitlab-volume
            mountPath: /etc/gitlab
