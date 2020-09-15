@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
        - name: gitlab-container
-         image: gitlab/gitlab-ce:latest
+         image: gitlab/gitlab-ce:13.3.6-ce.0
          env:
          - name: EXTERNAL_URL
            value: "103.218.157.69"
