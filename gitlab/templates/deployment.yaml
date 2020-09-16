@@ -20,7 +20,7 @@ spec:
          - name: EXTERNAL_URL
            value: "103.218.157.69"
          - name: CI_SERVER_URL
-           value: http://gitlab.gitlab.svc.cluster.local:80
+           value: http://gitlab-svc.gitlab.svc.cluster.local:80
          - name: GITLAB_OMNIBUS_CONFIG
            value: |
             external_url "http://103.218.157.69"
