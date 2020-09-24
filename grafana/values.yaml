@@ -368,6 +368,8 @@ dashboards:
   #   some-dashboard:
   #     json: |
   #       $RAW_JSON
+      other-dashboard:
+        file: dashboards/k8s_cluster.json
       custom-dashboard:
         file: dashboards/k8s_node.json
       prometheus-stats:
