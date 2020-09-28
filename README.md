@@ -12,7 +12,7 @@
 - [Gitlab](#-gitlab)
 - [Grafana](#%EF%B8%8F-grafana)
 - [Loki](#-loki)
-- [Prometheus](#-prometheus)
+- [Prometheus](#%EF%B8%8F-prometheus)
 - [Demo Features](#-demo-features)
 - [Used By](#-used-by)
 - [License](#-license)
