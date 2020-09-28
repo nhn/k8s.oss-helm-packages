@@ -24,7 +24,7 @@
 
 ## 📦 OSS HELM Packages
 
-### TOAST UI Editor
+### Toast K8S OpenSource Stack
 
 | Name | Description |
 | --- | --- |
