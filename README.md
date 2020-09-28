@@ -21,7 +21,6 @@
 
 <img src="https://api-storage.cloud.toast.com/v1/AUTH_1d1d69bb458e4b73b57f25ad339f5067/k8s-guide/screen1.png" alt="oss" width="1000" />
 
-</br>
 
 ## 📦 OSS HELM Packages
 
@@ -38,9 +37,13 @@
 
 </br>
 
-## 🤖 StorageClass?
+## 🤖 StorageClass
 
 Storage Class는 Toast에서 제공하는 Block Storage(PV)와 Kubernetes에서 마운트할 볼륨(PVC)을 쉽게 자동 매핑해주는 리소스입니다.
+
+해당 Storage Class는 다음과 같이 분류 됩니다.
+* **Chunk Indexing** : sc-delete는 사용자가 pvc를 삭제할 시 자동으로 해당 Block Storage를 삭제합니다.
+* **Label Tracking** : sc-retain은 사용자가 pvc를 삭제해도 해당 Block Storage를 유지합니다.
 
 Toast Kubernetes의 PersistentVolume 사용을 위한 Storage Class를 생성합니다. 
 
@@ -48,9 +51,9 @@ Toast Kubernetes의 PersistentVolume 사용을 위한 Storage Class를 생성합
 $ kubectl apply -f storageClass
 ```
 
+</br>
 
-
-## 🎨  Argocd?
+## 🎨  Argocd
 
 Kubernetes Devops를 구축하기 위해 Gitlab(Continuous Integration)와 Argocd(continuous Deployment)를 사용합니다.
 
@@ -66,8 +69,9 @@ $ helm install argocd ./argocd -n argocd
 $ kubectl get svc argocd-server -n argocd -o=jsonpath='{$.status.loadBalancer.ingress[0].ip}';echo
 ```
 
+</br>
 
-## 💪  Gitlab?
+## 💪  Gitlab
 
 Gitlab은 깃 원격 저장소 기능, 이슈 트래커, 그리고 CI/CD 기능 등을 제공하는 버전 관리 소프트웨어입니다. 
 
@@ -88,9 +92,9 @@ $ kubectl set env deployment/gitlab-deployment -n gitlab GITLAB_OMNIBUS_CONFIG="
 $ kubectl  get svc -n gitlab -o=jsonpath='{.items[0].status.loadBalancer.ingress[0].ip}'; echo
 ```
 
+</br>
 
-
-## ⭐️  Grafana?
+## ⭐️  Grafana
 
 Grafana는 open source visualization and anlytics software로 dashboard를 통해 프로세싱 된 로그, 메트릭스 정보등의 지표들을 보여줍니다.
 
@@ -105,7 +109,9 @@ $ helm install grafana ./grafana -n monitoring
 $ kubectl get svc --namespace monitoring grafana -o jsonpath='{.status.loadBalancer.ingress[0].ip}'
 ```
 
-## 🔥  Loki?
+</br>
+
+## 🔥  Loki
 
 Grafana Loki는 pulling 방식의 모니터링 오픈소스인 Prometheus에 영감을 받아 개발된 로그 시스템입니다.
 
@@ -130,6 +136,8 @@ $ kubectl get svc --namespace monitoring grafana -o jsonpath='{.status.loadBalan
 
 #### Loki를 통해 축적되는 로그는 Grafana를 통해 볼수 있습니다.
 
+</br>
+
 ## ☄️ Prometheus
 
 Prometheus 는 Kubernetes에서 가장 많이 사용하는 오픈 소스 기반 모니터링 시스템으로(pull-based over http monitoring), http endpoint를 통해 원하는 타켓의 Kubernetes 클러스터 및 Docker 컨테이너들를 손쉽게 모니터링 가능합니다.
@@ -152,12 +160,13 @@ $ helm install prometheus ./prometheus -n monitoring
 
 #### Prometheus를 통해 축적되는 로그는 Grafana를 통해 볼수 있습니다.
 
-
+</br>
 
 ## 🎨 Demo Features
 
 * [**Java Demo Src**](https://github.com/nhn/k8s.demo-java-src) : Kubernets CI/CD 배포를 위한 예제 Java 애플리케이션 
 * [**Java Demo Helm Chart**](https://github.com/nhn/k8s.demo-helm-chart) : Kubernets CI/CD 배포를 위한 예제 Helm Chart 
+
 
 ## 🐾 Reference
 
