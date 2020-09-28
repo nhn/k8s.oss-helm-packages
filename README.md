@@ -10,7 +10,7 @@
 - [StorageClass](#-storageclass)
 - [Argocd](#-argocd)
 - [Gitlab](#-gitlab)
-- [Grafana](#-grafana)
+- [Grafana](#%EF%B8%8F-grafana)
 - [Loki](#-loki)
 - [Prometheus](#-prometheus)
 - [Demo Features](#-demo-features)
