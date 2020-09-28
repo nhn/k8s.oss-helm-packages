@@ -174,7 +174,7 @@ Here are more [examples](https://nhn.github.io/tui.editor/latest/tutorial-exampl
 ## ☀️ Kubernetes Support
 
 | K8S 1.17 ~ | Helm 3.0 ~
-| :---------: | :---------: | :---------: | :---------: | :---------: |
+
 | Yes |  Yes |
 
 
