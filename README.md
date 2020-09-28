@@ -159,7 +159,7 @@ Prometheus의 특징은 다음과 같습니다.
 
 
 
-<img src="https://api-storage.cloud.toast.com/v1/AUTH_1d1d69bb458e4b73b57f25ad339f5067/k8s-guide/screen8.png" alt="Prometheus" width="1000" />
+<img src="https://api-storage.cloud.toast.com/v1/AUTH_1d1d69bb458e4b73b57f25ad339f5067/k8s-guide/screen8.png" alt="Prometheus" width="700" />
 
 Loki log agent인 Promtail과 Loki 설치를 진행합니다.
 
