@@ -7,13 +7,13 @@
 ## 🚩 Table of Contents
 
 - [OSS HELM PACKAGES](#-oss-helm-packages)
-- [StorageClass](#-why-toast-ui-editor)
-- [Argocd](#-features)
-- [Gitlab](#-examples)
-- [Grafana](#-browser-support)
-- [Loki](#-pull-request-steps)
-- [Prometheus](#-contributing)
-- [TOAST UI Family](#-toast-ui-family)
+- [StorageClass](#-storageclass)
+- [Argocd](#-argocd)
+- [Gitlab](#-gitlab)
+- [Grafana](#-grafana)
+- [Loki](#-loki)
+- [Prometheus](#-prometheus)
+- [Demo Features](#-demo-features)
 - [Used By](#-used-by)
 - [License](#-license)
 
