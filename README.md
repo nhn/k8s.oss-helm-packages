@@ -185,16 +185,12 @@ $ helm install prometheus ./prometheus -n monitoring
 
 ## 💬 Contributing
 
-* [Code of Conduct](https://github.com/nhn/tui.editor/blob/master/CODE_OF_CONDUCT.md)
-* [Contributing Guideline](https://github.com/nhn/tui.editor/blob/master/CONTRIBUTING.md)
-* [Commit Convention](https://github.com/nhn/tui.editor/blob/master/docs/COMMIT_MESSAGE_CONVENTION.md)
-* [Issue Guidelines](https://github.com/nhn/tui.editor/tree/master/.github/ISSUE_TEMPLATE)
-
+* [Digital Platform Center](https://toast.com)
 
 ## 🚀 Used By
 
 * [TOAST Cloud! - Toast Kubernetes, Toast Container Registry](https://toast.com)
-* [UNOTES - Visual Studio Code Extension](https://marketplace.visualstudio.com/items?itemName=ryanmcalister.Unotes)
+* [Kubernetes Open Source Guide](https://toast.com)
 
 
 ## 📜 License
