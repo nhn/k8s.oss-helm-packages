@@ -53,7 +53,7 @@ $ kubectl apply -f storageClass
 
 </br>
 
-## 🎨  Argocd
+## 🎨 Argocd
 
 Kubernetes Devops를 구축하기 위해 Gitlab(Continuous Integration)와 Argocd(continuous Deployment)를 사용합니다.
 
@@ -71,7 +71,7 @@ $ kubectl get svc argocd-server -n argocd -o=jsonpath='{$.status.loadBalancer.in
 
 </br>
 
-## 💪  Gitlab
+## 💪 Gitlab
 
 Gitlab은 깃 원격 저장소 기능, 이슈 트래커, 그리고 CI/CD 기능 등을 제공하는 버전 관리 소프트웨어입니다. 
 
@@ -94,7 +94,7 @@ $ kubectl  get svc -n gitlab -o=jsonpath='{.items[0].status.loadBalancer.ingress
 
 </br>
 
-## ⭐️  Grafana
+## ⭐️ Grafana
 
 Grafana는 open source visualization and anlytics software로 dashboard를 통해 프로세싱 된 로그, 메트릭스 정보등의 지표들을 보여줍니다.
 
@@ -111,7 +111,7 @@ $ kubectl get svc --namespace monitoring grafana -o jsonpath='{.status.loadBalan
 
 </br>
 
-## 🔥  Loki
+## 🔥 Loki
 
 Grafana Loki는 pulling 방식의 모니터링 오픈소스인 Prometheus에 영감을 받아 개발된 로그 시스템입니다.
 
