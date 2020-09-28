@@ -154,29 +154,25 @@ $ helm install prometheus ./prometheus -n monitoring
 
 
 
-## 🎨 Features
+## 🎨 Demo Features
 
-* [**Viewer**](https://github.com/nhn/tui.editor/tree/master/apps/editor/docs/viewer.md) : Supports a mode to display only markdown data without an editing area.
-* [**Internationalization (i18n)**](https://github.com/nhn/tui.editor/tree/master/apps/editor/docs/i18n.md) : Supports English, Dutch, Korean, Japanese, Chinese, Spanish, German, Russian, French, Ukrainian, Turkish, Finnish, Czech, Arabic, Polish, Galician, Swedish, Italian, Norwegian, Croatian + language and you can extend.
+* [**Java Demo Src**](https://github.com/nhn/k8s.demo-java-src) : Kubernets CI/CD 배포를 위한 예제 Java 애플리케이션 
+* [**Java Demo Helm Chart**](https://github.com/nhn/k8s.demo-helm-chart) : Kubernets CI/CD 배포를 위한 예제 Helm Chart 
 
-## 🐾 Examples
+## 🐾 Reference
 
-* [Basic](https://nhn.github.io/tui.editor/latest/tutorial-example01-editor-basic)
-* [Viewer](https://nhn.github.io/tui.editor/latest/tutorial-example04-viewer)
-* [Using All Plugins](https://nhn.github.io/tui.editor/latest/tutorial-example15-editor-with-all-plugins)
-* [Creating the User's Plugin](https://nhn.github.io/tui.editor/latest/tutorial-example17-creating-plugin)
-* [Customizing the Toobar Buttons](https://nhn.github.io/tui.editor/latest/tutorial-example19-customizing-toolbar-buttons)
-* [Internationalization (i18n)](https://nhn.github.io/tui.editor/latest/tutorial-example20-i18n)
-
-Here are more [examples](https://nhn.github.io/tui.editor/latest/tutorial-example01-editor-basic) and play with TOAST UI Editor!
+* [Kubernetes](https://kubernetes.io/)
+* [Helm](https://helm.sh/)
+* [Prometheus](https://prometheus.io/)
+* [Argocd](https://argoproj.github.io/)
+* [Gitlab CI/CD](https://docs.gitlab.com/ee/ci/)
+* [Grafana](https://grafana.com/)
+* [Loki](https://grafana.com/oss/loki/)
 
 
 ## ☀️ Kubernetes Support
 
 | K8S 1.17 ~ | Helm 3.0 ~
-
-| Yes |  Yes |
-
 
 ## 💬 Contributing
 
@@ -194,4 +190,4 @@ Here are more [examples](https://nhn.github.io/tui.editor/latest/tutorial-exampl
 
 ## 📜 License
 
-This software is licensed under the [MIT](https://github.com/nhn/tui.editor/blob/master/LICENSE) © [NHN](https://github.com/nhn).
+This software is licensed under the [Docker Certified](https://hub.docker.com) © [NHN](https://github.com/nhn).
