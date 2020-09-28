@@ -95,11 +95,11 @@ $ helm install gitlab ./gitlab -n gitlab
 
 $ helm install argocd ./argocd -n argocd
 
-$ kubectl  get svc -n gitlab -o=jsonpath='{.items[0].status.loadBalancer.ingress[0].ip}'; echo
+$ kubectl get svc -n gitlab -o=jsonpath='{.items[0].status.loadBalancer.ingress[0].ip}'; echo
 
 $ kubectl set env deployment/gitlab-deployment -n gitlab GITLAB_OMNIBUS_CONFIG="external_url 'http://$(kubectl get svc -n gitlab -o=jsonpath='{.items[0].status.loadBalancer.ingress[0].ip}')/'"
 
-$ kubectl  get svc -n gitlab -o=jsonpath='{.items[0].status.loadBalancer.ingress[0].ip}'; echo
+$ kubectl get svc -n gitlab -o=jsonpath='{.items[0].status.loadBalancer.ingress[0].ip}'; echo
 ```
 
 </br>
