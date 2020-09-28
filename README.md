@@ -6,7 +6,7 @@
 
 ## 🚩 Table of Contents
 
-- [OSS HELM PACKAGES](#-OSS HELM Packages)
+- [OSS HELM PACKAGES](#-oss-helm-packages)
 - [StorageClass](#-why-toast-ui-editor)
 - [Argocd](#-features)
 - [Gitlab](#-examples)
