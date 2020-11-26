@@ -3,11 +3,10 @@
 # Declare variables to be passed into your templates.
 
 replicaCount: 1
-
-image:
-  repository: nginx
-  pullPolicy: IfNotPresent
-
+gitlab:
+  nodeplace: ""       
+  pvc:
+    storage: 10Gi
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""

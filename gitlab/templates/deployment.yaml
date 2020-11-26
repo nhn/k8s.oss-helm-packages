@@ -13,6 +13,9 @@ spec:
       labels:
         app: gitlab
     spec:
+     {{- if .Values.gitlab.nodeplace }}       
+      nodeName: {{ .Values.gitlab.nodeplace }}
+     {{- end }}         
       containers:
        - name: gitlab-container
          image: gitlab/gitlab-ce:13.3.6-ce.0
