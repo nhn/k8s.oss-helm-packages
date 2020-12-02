@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: config-file-pod
+spec:
+  containers:
+    - name: test-container
+      image: k8s.gcr.io/busybox
+      command: [ "/bin/sh", "-c", "env" ]
+      envFrom:
+      - configMapRef:
+          name: special-config
+      env:
+        - name: LOG_LEVEL
+          valueFrom:
+            configMapKeyRef:
+              name: env-config
+              key: log_level
+        - name: LOG_MAX_VOL
+          valueFrom:
+            configMapKeyRef:
+              name: env-config
+              key: log_max_vol
+  restartPolicy: Never

@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: config-volume-pod
+spec:
+  containers:
+    - name: test-container
+      image: nginx
+      volumeMounts:
+      - name: nginx-volume
+        mountPath: /data
+  volumes:
+  - name: nginx-volume
+    configMap:
+      name: env-config
