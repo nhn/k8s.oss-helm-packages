@@ -1,0 +1,20 @@
+# pod-pvc.yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-with-static-pv
+spec:
+  containers:
+    - name: web
+      image: nginx
+      ports:
+        - name: web
+          containerPort: 80
+          protocol: TCP
+      volumeMounts:
+        - name: html-volume
+          mountPath: "/usr/share/nginx/html"
+  volumes:
+    - name: html-volume
+      persistentVolumeClaim:
+        claimName: pvc-static
