@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "wordpress.fullname" . }}
+  labels:
+    app: {{ .Values.wordpress.labels.app }}        
+spec:
+  replicas: {{ .Values.wordpress.replicaCount }}
+  selector:
+    matchLabels:
+{{- with .Values.wordpress.labels }}
+{{ toYaml . | indent 6  }}
+{{- end }}       
+  template:
+    metadata:
+      labels:
+{{- with .Values.wordpress.labels }}
+{{ toYaml . | indent 8  }}
+{{- end }}              
+    spec:
+      containers:
+      - name: {{ include "wordpress.fullname" . }}
+        image: {{ .Values.wordpress.image.repository }}:{{ .Values.wordpress.image.tag }}
+        env:
+         - name: WORDPRESS_DB_HOST
+           value: {{ include "mysql.servicename" . }}
+         - name: WORDPRESS_DB_PASSWORD
+           valueFrom:
+             secretKeyRef:
+               name: {{ include "wordpress.fullname" . }}
+               key: password
+        volumeMounts:
+        - name: wordpress
+          mountPath: /var/www/html 
+        ports:
+        - name: http
+          containerPort: 80
+      volumes:
+      - name: wordpress
+      {{- if .Values.wordpress.persistence.enabled }}
+        persistentVolumeClaim:
+          claimName: {{ include "wordpress.fullname" . }}
+      {{- else }}
+        emptyDir: {}
+      {{- end -}}        

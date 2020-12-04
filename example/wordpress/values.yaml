@@ -1,0 +1,17 @@
+wordpress:
+  replicaCount: 1
+  image:
+    repository: wordpress
+    tag: "4.8-apache"    
+  labels:
+     app: wordpress
+     stage: dev
+  persistence:  
+     enabled: true
+     storageClass: sc-retain
+     accessMode: ReadWriteOnce
+     size: 10Gi      
+  fullnameOverride: ""
+mysql:
+  db:
+    password: test1234
