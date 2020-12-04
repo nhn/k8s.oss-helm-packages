@@ -1,11 +1,16 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: wordpress
+  name: {{ include "wordpress.fullname" . }}
 spec:
   ports:
-  - port: 80
-    targetPort: 80  
+  - port: {{ .Values.wordpress.service.externalPort }}
+    targetPort: 80
+{{- if (and (eq .Values.wordpress.service.type "NodePort") (not (empty .Values.wordpress.service.nodePort))) }}
+    nodePort: {{ .Values.wordpress.service.nodePort }}
+{{- end }}
   selector:
-    app: wordpress
-  type: LoadBalancer
+{{- with .Values.wordpress.labels }}
+{{ toYaml . | indent 4 }}
+{{- end }}
+  type: {{ .Values.wordpress.service.type }}

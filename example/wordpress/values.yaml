@@ -3,15 +3,24 @@ wordpress:
   image:
     repository: wordpress
     tag: "4.8-apache"    
+  
   labels:
      app: wordpress
      stage: dev
+  
   persistence:  
-     enabled: true
+     enabled: false
      storageClass: sc-retain
      accessMode: ReadWriteOnce
      size: 10Gi      
+  
+  service:
+    type: ClusterIP
+    externalPort: 80
+    nodePort: ""
+
   fullnameOverride: ""
+
 mysql:
   db:
     password: test1234
