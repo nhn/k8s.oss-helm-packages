@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ include "wordpress.fullname" . }}
+  namespace: {{ .Values.wordpress.nameSpace }}
   labels:
     app: {{ .Values.wordpress.labels.app }}        
 spec:

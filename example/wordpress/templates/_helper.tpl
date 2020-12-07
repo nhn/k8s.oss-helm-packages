@@ -13,7 +13,7 @@
 {{- end -}}
 
 {{- define "mysql.servicename"}}
-{{- $base := default (printf "%s" "mysql") .Values.fullnameOverride -}}
+{{- $base := default (printf "%s-%s" .Release.Name "mysql.db.svc.cluster.local") .Values.fullnameOverride -}}
 {{- $name := print $base -}}
 {{- $name | lower | trunc 54 | trimSuffix "-" -}}
 {{- end -}}

@@ -2,8 +2,8 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: {{ include "wordpress.fullname" . }}
-  namespace: {{ .Values.wordpress.nameSpace }}
+  name: {{ include "mysql.fullname" . }}
+  namespace: {{ .Values.mysql.nameSpace }}
 spec:
   resources:
     requests:
@@ -11,4 +11,4 @@ spec:
   accessModes:
   - {{ .Values.wordpress.persistence.accessMode | quote }}
   storageClassName: "{{ .Values.wordpress.persistence.storageClass }}"
-{{- end }}
+  {{- end }}

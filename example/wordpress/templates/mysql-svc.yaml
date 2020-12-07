@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "mysql.fullname" . }}
+  namespace: {{ .Values.mysql.nameSpace }}
+spec:
+  ports:
+  - port: {{ .Values.mysql.service.externalPort }}
+    targetPort: 3306    
+{{- if (and (eq .Values.mysql.service.type "NodePort") (not (empty .Values.mysql.service.nodePort))) }}
+    nodePort: {{ .Values.mysql.service.nodePort }}
+{{- end }}
+  selector:
+{{- with .Values.mysql.labels }}
+{{ toYaml . | indent 4 }}
+{{- end }}
+  type: {{ .Values.mysql.service.type }}

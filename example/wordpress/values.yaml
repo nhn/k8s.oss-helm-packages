@@ -1,5 +1,7 @@
 wordpress:
+  nameSpace: web       
   replicaCount: 1
+
   image:
     repository: wordpress
     tag: "4.8-apache"    
@@ -9,7 +11,7 @@ wordpress:
      stage: dev
   
   persistence:  
-     enabled: false
+     enabled: true
      storageClass: sc-retain
      accessMode: ReadWriteOnce
      size: 10Gi      
@@ -22,5 +24,22 @@ wordpress:
   fullnameOverride: ""
 
 mysql:
+  nameSpace: db
+  replicaCount: 1
   db:
     password: test1234
+
+  persistence:
+     enabled: true
+     storageClass: sc-retain
+     accessMode: ReadWriteOnce
+     size: 10Gi
+  
+  labels:
+     app: mysql
+     stage: dev
+
+  service:
+    type: ClusterIP
+    externalPort: 3306
+    nodePort: "" 
