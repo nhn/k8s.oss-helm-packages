@@ -30,6 +30,10 @@ spec:
              secretKeyRef:
                name: {{ include "wordpress.fullname" . }}
                key: password
+{{- with .Values.wordpress.resources }}
+        resources:
+{{ toYaml . | indent 10  }}
+{{- end }}      
         volumeMounts:
         - name: wordpress
           mountPath: /var/www/html 

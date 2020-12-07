@@ -1,40 +1,47 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mysql
+  name: {{ include "mysql.fullname" . }}
   namespace: {{ .Values.mysql.nameSpace }}
+  labels:
+    app: {{ .Values.mysql.labels.app }}
 spec:
-  replicas: 1
+  replicas: {{ .Values.mysql.replicaCount }}
   selector:
     matchLabels:
-      app: mysql
+{{- with .Values.mysql.labels }}
+{{ toYaml . | indent 6  }}
+{{- end }}            
   template:
     metadata:
       labels:
-        app: mysql
+{{- with .Values.wordpress.labels }}
+{{ toYaml . | indent 8  }}
+{{- end }}              
     spec:
       containers:
-      - name: mysql
-        image: mysql:5.6
+      - name: {{ include "mysql.fullname" . }}
+        image: {{ .Values.mysql.image.repository }}:{{ .Values.mysql.image.tag }}
         env:
         - name: MYSQL_ROOT_PASSWORD
           valueFrom:
             secretKeyRef:
-              name: mysql-password
-              key: password
+              name: {{ include "mysql.fullname" . }}
+              key: password        
+{{- with .Values.mysql.resources }}
         resources:
-          requests:
-            memory: 512Mi
-            cpu: 100m
-          limits:
-            memory: 512Mi
-            cpu: 200m
+{{ toYaml . | indent 10  }}
+{{- end }}        
         volumeMounts:
         - name: mysql
           mountPath: /var/lib/mysql 
         ports:
         - containerPort: 3306
       volumes:
-      - name: mysql
+      - name: wordpress
+      {{- if .Values.wordpress.persistence.enabled }}
         persistentVolumeClaim:
-          claimName: mysql-pvc
+          claimName: {{ include "mysql.fullname" . }}
+      {{- else }}
+        emptyDir: {}
+      {{- end -}}        

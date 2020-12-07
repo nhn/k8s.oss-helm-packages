@@ -10,6 +10,14 @@ wordpress:
      app: wordpress
      stage: dev
   
+  resources:
+    requests:
+      memory: 512Mi
+      cpu: 500m
+    limits:
+      memory: 1Gi
+      cpu: 1
+
   persistence:  
      enabled: true
      storageClass: sc-retain
@@ -26,8 +34,21 @@ wordpress:
 mysql:
   nameSpace: db
   replicaCount: 1
+
+  image:
+    repository: mysql
+    tag: "5.6"
+
   db:
     password: test1234
+  
+  resources:
+    requests:
+      memory: 512Mi
+      cpu: 100m
+    limits:
+      memory: 512Mi
+      cpu: 200m
 
   persistence:
      enabled: true
@@ -42,4 +63,7 @@ mysql:
   service:
     type: ClusterIP
     externalPort: 3306
-    nodePort: "" 
+    nodePort: ""
+
+  fullnameOverride: ""
+  
