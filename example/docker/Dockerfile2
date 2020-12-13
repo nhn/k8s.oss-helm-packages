@@ -1,0 +1,2 @@
+FROM   httpd:latest
+COPY   ./parallo /usr/local/apache2/htdocs/
