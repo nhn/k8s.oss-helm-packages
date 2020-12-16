@@ -1,0 +1,66 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: prod-app
+  labels:
+    app: prod
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx
+      version: "0.1"
+  template:
+    metadata:
+      labels:
+       app: nginx
+       version: "0.1"
+    spec:
+      volumes:      
+      - name: nginx-volume
+        configMap:
+           name: nginx-config
+      - name: ssh-key-volume
+        secret:
+          secretName: ssh-key
+      containers:
+      - name: prod-app
+        image: nginx:1.19
+        volumeMounts:
+        - name: nginx-volume
+          mountPath: /tmp
+        - name: ssh-key-volume
+          mountPath: /app/confidential  
+        env:
+        - name: DB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: app-secret
+              key: db_password        
+        - name: DB_USERNAME 
+          valueFrom:
+            secretKeyRef:
+              name: app-secret
+              key: db_username      
+        - name: spring.server.engine
+          valueFrom:
+            configMapKeyRef:
+              name: app-config
+              key: spring.config.name
+        - name: DB_ADDRESS
+          valueFrom:
+            configMapKeyRef:
+              name: app-config
+              key: dbaddress
+        - name: LOG_LEVEL
+          value: "INFO"        
+        resources:
+          requests:
+            cpu: 200m
+            memory: 128Mi
+          limits:
+            cpu: 250m
+            memory: 256Mi
+        ports:
+        - name: prod
+          containerPort: 80 

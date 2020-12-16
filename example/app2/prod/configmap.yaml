@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app-config
+data:
+  spring.config.name: tomcat      
+  dbaddress: "mysql:3306"
+  app2: "app2-service"
+  log_level: "INFO"
+  log_max_vol: "500Mi"
