@@ -1,0 +1,18 @@
+apiVersion: v1
+data:
+  default.conf: |
+    upstream backend {
+      server httpd.test.svc.cluster.local:80;
+    }
+
+    server {
+      listen 80;
+      server_name example.com;
+       location / {
+         proxy_pass http://backend;
+         proxy_set_header Host $host;
+        }
+    }
+kind: ConfigMap
+metadata:
+  name: nginx-conf

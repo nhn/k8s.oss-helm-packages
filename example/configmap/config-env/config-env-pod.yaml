@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: dapi-test-pod
+  name: config-env-pod
 spec:
   containers:
     - name: test-container
@@ -28,4 +28,9 @@ spec:
             configMapKeyRef:
               name: env-config
               key: log_max_vol
+        - name: DB_HOST
+          valueFrom:
+            configMapKeyRef:
+              name: env-config
+              key: db_host
   restartPolicy: Never
