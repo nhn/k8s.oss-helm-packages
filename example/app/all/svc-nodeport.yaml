@@ -1,13 +1,14 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: prod-service
-  namespace: prod
+  name: svc-nodeport
 spec:
   ports:
   - port: 80
     targetPort: 80
-  type: LoadBalancer   
+    nodePort: 30080
+  type: NodePort   
   selector:
-    app: prod        
+    app: nginx
+    version: "0.1"    
 
