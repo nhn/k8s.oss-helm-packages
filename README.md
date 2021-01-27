@@ -19,7 +19,7 @@
 
 #### 토스트 쿠버네티스에서는 다음과 같은 오픈소스 스택을 활용하여 MSA 기반의 어플리케이션, CI/CD DevOps그리고 클러스터 모니터링 환경을 쉽게 구축 할 수 있습니다. 
 
-<img src="https://api-storage.cloud.toast.com/v1/AUTH_1d1d69bb458e4b73b57f25ad339f5067/k8s-guide/screen1.png" alt="oss" width="1000" />
+<img src="https://api-storage.cloud.toast.com/v1/AUTH_371144fc92db44ad910835313895529f/h8s-guide/pic1.png" alt="oss" width="1000" />
 
 
 ## 📦 OSS HELM Packages
