@@ -195,7 +195,7 @@ $ helm install prometheus ./prometheus -n monitoring
 
 ## 💬 Contributing
 
-* [Digital Platform Center](https://toast.com)
+* [Cloud Engineering Dpt](https://toast.com)
 
 ## 🚀 Used By
 
