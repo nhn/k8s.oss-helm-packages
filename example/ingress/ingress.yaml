@@ -2,14 +2,19 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: wp
+  namespace: test
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
+  tls:
+  - hosts:
+    - toast.com
+    secretName: tls-secret
   rules:
-  - host: wordpress.toast 
+  - host: toast.com
     http:
       paths:
       - path: /
         backend:
-          serviceName: wordpress
+          serviceName: httpd
           servicePort: 80

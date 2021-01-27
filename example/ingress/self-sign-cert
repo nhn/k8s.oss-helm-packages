@@ -1,0 +1,12 @@
+#!/bin/bash
+DNS=$1
+openssl genrsa -out ca.key 2048
+openssl req -new -key ca.key -subj "/CN=$DNS" -out ca.csr
+openssl x509 -req -in ca.csr -signkey ca.key -CAcreateserial  -out ca.crt -days 1000
+
+# kubectl create namespace test
+# kubectl create secret tls tls-secret --cert=ca.crt --key=ca.key -n test
+
+# kubectl run httpd --image httpd -n test
+# kubectl expose deployment httpd --port 80 --target-port 80 -n test
+# curl https://toast.com:<ingress https nodeport> -kv --resolve toast.com:<ingress https nodeport>:<node ip>
