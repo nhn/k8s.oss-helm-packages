@@ -109,7 +109,7 @@ $ kubectl get svc -n gitlab -o=jsonpath='{.items[0].status.loadBalancer.ingress[
 Grafana는 open source visualization and anlytics software로 dashboard를 통해 프로세싱 된 로그, 메트릭스 정보등의 지표들을 보여줍니다.
 
 
-<img src="https://api-storage.cloud.toast.com/v1/AUTH_371144fc92db44ad910835313895529f/h8s-guide/pic6.png" alt="grafana" width="1000" />
+<img src="https://api-storage.cloud.toast.com/v1/AUTH_371144fc92db44ad910835313895529f/h8s-guide/pic7.png" alt="grafana" width="1000" />
 
 ``` sh
 $ kubectl create namespace monitoring
