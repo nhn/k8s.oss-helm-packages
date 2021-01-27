@@ -1,0 +1,2 @@
+#!/bin/bash
+kubectl -n kube-system patch svc/kubernetes-dashboard -p '{"spec":{"type":"LoadBalancer"}}'
