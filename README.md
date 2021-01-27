@@ -65,7 +65,7 @@ Argocd의 특징은 다음과 같습니다.
 * **Audit & Automation** : 클러스터의 어플리케이션 배포 및 라이프사이클의 audit & automation 구현
 * **Gitops** : Gitops 방식의 git에 저장된 소스코드 정보를 가지고 클러스터에 어플리케이션 배포 구현
 
-<img src="https://api-storage.cloud.toast.com/v1/AUTH_1d1d69bb458e4b73b57f25ad339f5067/k8s-guide/screen2.png" alt="argocd" width="1000" />
+<img src="https://api-storage.cloud.toast.com/v1/AUTH_371144fc92db44ad910835313895529f/h8s-guide/pic2.png" alt="argocd" width="1000" />
 
 ``` sh
 $ kubectl create namespace argocd
@@ -86,7 +86,7 @@ Gitlab의 특징은 다음과 같습니다.
 * **Api Integration** : 다양한 오픈소스와 API 연동
 * **Private Repository** : Private Repository 구축 
 
-<img src="https://api-storage.cloud.toast.com/v1/AUTH_1d1d69bb458e4b73b57f25ad339f5067/k8s-guide/gitlab-docker-ansible.png" alt="gitlab" width="1000" />
+<img src="https://api-storage.cloud.toast.com/v1/AUTH_371144fc92db44ad910835313895529f/h8s-guide/pic3.png" alt="gitlab" width="1000" />
 
 ``` sh
 $ kubectl create namespace gitlab
@@ -109,7 +109,7 @@ $ kubectl get svc -n gitlab -o=jsonpath='{.items[0].status.loadBalancer.ingress[
 Grafana는 open source visualization and anlytics software로 dashboard를 통해 프로세싱 된 로그, 메트릭스 정보등의 지표들을 보여줍니다.
 
 
-<img src="https://api-storage.cloud.toast.com/v1/AUTH_1d1d69bb458e4b73b57f25ad339f5067/k8s-guide/screen5.png" alt="grafana" width="1000" />
+<img src="https://api-storage.cloud.toast.com/v1/AUTH_371144fc92db44ad910835313895529f/h8s-guide/pic6.png" alt="grafana" width="1000" />
 
 ``` sh
 $ kubectl create namespace monitoring
@@ -131,7 +131,7 @@ Loki의 특징은 다음과 같습니다.
 * **Container Deployment** : Kubernetes Dynamic 환경 최적화
 
 
-<img src="https://api-storage.cloud.toast.com/v1/AUTH_1d1d69bb458e4b73b57f25ad339f5067/k8s-guide/screen6.png" alt="Loki" width="1000" />
+<img src="https://api-storage.cloud.toast.com/v1/AUTH_371144fc92db44ad910835313895529f/h8s-guide/pic4.png" alt="Loki" width="1000" />
 
 Loki log agent인 Promtail과 Loki 설치를 진행합니다.
 
@@ -159,7 +159,7 @@ Prometheus의 특징은 다음과 같습니다.
 
 
 
-<img src="https://api-storage.cloud.toast.com/v1/AUTH_1d1d69bb458e4b73b57f25ad339f5067/k8s-guide/screen8.png" alt="Prometheus" width="1000" />
+<img src="https://api-storage.cloud.toast.com/v1/AUTH_371144fc92db44ad910835313895529f/h8s-guide/pic5.png" alt="Prometheus" width="1000" />
 
 Loki log agent인 Promtail과 Loki 설치를 진행합니다.
 
