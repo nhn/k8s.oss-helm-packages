@@ -2,7 +2,7 @@ apiVersion: v1
 data:
   default.conf: |
     upstream backend {
-      server httpd.test.svc.cluster.local:80;
+      server google.com:80;
     }
 
     server {
